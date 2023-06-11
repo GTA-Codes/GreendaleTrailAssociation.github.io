@@ -1,0 +1,399 @@
+// Your variable overrides
+@import "./customColors.scss";
+
+// body {
+//     background-color: $backgroundLight;
+//     color: $onBackgroundLight;
+
+//     footer,
+//     .custom\:navbar {
+//         background-color: $surfaceLight;
+//         color: $onSurfaceLight;
+//         padding: .8em;
+
+//         // copy computed nav bar props from other bootstrap navbars
+//         align-items: center;
+//         box-sizing: border-box;
+//         display: flex;
+//         justify-content: space-between;
+
+//         .nav-section {
+//             justify-content: end;
+
+//             a {
+//                 padding-left: .8em;
+//             }
+
+//             // hide the menu and the sidebar when the screen isn't small
+//             label.hamburger-menu,
+//             .sidebar-row-wrapper {
+//                 display: none;
+//             }
+//         }
+//     }
+// }
+
+
+// @media (max-width: 992px) {
+//     $barWidth: 20px;
+//     $barHeight: 4px;
+//     $barGap: 3px;
+//     $fullStack: calc((2 * $barHeight) + $barGap);
+//     $burgerMargin: 16px;
+//     $animationTiming: 3s cubic-bezier(.4, 0, .6, 1);
+
+//     @keyframes topBar {
+//         50% {
+//             translate: (0 calc(($barHeight / 2) + ($barGap / 2)));
+//             rotate: 0deg;
+//         }
+
+//         100% {
+//             translate: (0 calc(($barHeight / 2) + ($barGap / 2)));
+//             rotate: 45deg;
+//         }
+//     }
+
+//     @keyframes bottomBar {
+//         50% {
+//             translate: (0 calc(($barHeight / -2) + ($barGap / -2)));
+//             rotate: 0deg;
+//         }
+
+//         100% {
+//             translate: (0 calc(($barHeight / -2) + ($barGap / -2)));
+//             rotate: -45deg;
+//         }
+//     }
+
+//     @keyframes curtainBlur {
+//         100% {
+//             z-index: 5;
+//             backdrop-filter: blur(6px);
+//         }
+//     }
+
+//     @keyframes curtainUnBlur {
+//         99% {
+//             z-index: 5;
+//         }
+
+//         100% {
+//             z-index: -10;
+//             backdrop-filter: blur(0px);
+//         }
+//     }
+
+//     @keyframes slideLeft {
+//         100% {
+//             left: 50vw;
+//         }
+//     }
+
+//     @keyframes slideRight {
+//         100% {
+//             left: 100vw;
+//         }
+//     }
+
+//     *,
+//     *::after,
+//     *::before {
+//         box-sizing: border-box;
+//     }
+
+//     body {
+//         overflow: hidden;
+//     }
+
+//     body .custom\:navbar .nav-section {
+
+//         a {
+//             display: none;
+//         }
+
+//         align-items: center;
+
+//         #curtain {
+//             // display: none;
+//             z-index: -50;
+//             position: absolute;
+//             top: 0px;
+//             left: 0px;
+//             height: 100vh;
+//             width: 100vw;
+//             // background-color: red
+//         }
+
+//         div.sidebarWrapper {
+//             top: 0px;
+//             left: 100vw;
+//             z-index: 10;
+//             position: absolute;
+//             height: 100vh;
+//             width: 50vw;
+//             background-color: $surfaceContainerLight;
+//         }
+
+//         label.hamburger-menu {
+//             overflow: visible;
+//             $hypotenuse : calc($barWidth * 1.41424356237);
+//             appearance: none;
+//             display: flex;
+//             flex-direction: column;
+//             gap: $barGap;
+//             width: max-content;
+//             z-index: 60;
+//             cursor: pointer;
+//             transition-property: all;
+
+//             //hide the actual checkbox === the middle row
+//             & input {
+//                 display: none;
+//             }
+
+//             &:not(:has(input:checked)) {
+
+//                 //unblur the curtain when the menu gets unchecked
+//                 ~#curtain {
+//                     animation: curtainUnBlur 1s cubic-bezier(.4, 0, .6, 1) forwards;
+//                 }
+
+//                 ~div.sibarWrapper {
+//                     left: 100vw;
+//                     // transition: left;
+//                     // transition-duration: 480ms;
+//                     // transition-timing-function: cubic-bezier(.4, 0, .6, 1);
+//                 }
+//             }
+
+//             &:has(input:checked) {
+
+//                 //bring the curtain forwards and blur it
+//                 ~#curtain {
+//                     animation: curtainBlur 80ms cubic-bezier(.4, 0, .6, 1) forwards;
+//                 }
+
+//                 //slide the sidebar left
+//                 ~div.sidebarWrapper {
+//                     transform: translate(-50vw);
+//                     // left: 50vw;
+//                     // transition-property: left;
+//                     // transition-duration: 480ms;
+//                     // transition-timing-function: cubic-bezier(.4, 0, .6, 1);
+//                     //define the sidebar's contents
+
+//                     nav.sidebar-row-wrapper {
+//                         padding: .5rem 1rem;
+//                         padding-top: calc($barHeight + $burgerMargin + 1rem);
+//                         display: flex;
+//                         flex-direction: column;
+//                         font-size: large;
+
+//                         div.sidebar-row {
+//                             align-items: center;
+//                             padding: 0;
+//                             display: flex;
+//                             justify-content: start;
+
+//                             a {
+//                                 padding: 0;
+//                                 display: block;
+//                                 text-decoration: none;
+//                                 color: $onSurfaceLight;
+//                             }
+//                         }
+//                     }
+//                 }
+
+//                 &::before {
+//                     z-index: 90;
+//                     width: $barWidth;
+//                     transform-origin: center center;
+//                     animation: topBar 200ms cubic-bezier(.4, 0, .6, 1) forwards;
+//                 }
+
+//                 &::after {
+//                     z-index: 90;
+//                     width: $barWidth;
+//                     animation: bottomBar 200ms cubic-bezier(.4, 0, .6, 1) forwards;
+//                 }
+//             }
+
+//             &::before,
+//             &::after {
+//                 content: "";
+//                 height: $barHeight;
+//                 width: $barWidth;
+//                 background-color: black;
+//                 border-radius: 9000px;
+//             }
+//         }
+
+//     }
+// }
+
+
+$box-shadow: 0 .5rem 1rem rgba($primaryLight, .15);
+$box-shadow-sm: 0 .125rem .25rem rgba($primaryLight, .075);
+$box-shadow-lg: 0 1rem 3rem rgba($primaryLight, .175);
+$box-shadow-inset: inset 0 1px 2px rgba($primaryLight, .075);
+
+//must be before our custom mapping
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+//light scheme
+$custom-theme-colors-light: (
+    "primaryLight" : $primaryLight,
+    "onPrimaryLight": $onPrimaryLight,
+    "primaryContainer": $primaryContainerLight,
+    "onPrimaryContainerLight" : $onPrimaryContainerLight,
+    "primaryFixedLight" : $primaryFixedLight,
+    "onPrimaryFixedLight":$onPrimaryFixedLight,
+    "primaryFixedDimLight":$primaryFixedDimLight,
+    "onPrimaryFixedVariantLight":$onPrimaryFixedVariantLight,
+    // //secondary
+    "secondaryLight" : $secondaryLight ,
+    "onSecondaryLight" : $onSecondaryLight,
+    "secondaryContainerLight" : $secondaryContainerLight,
+    "onSecondaryContainerLight" : $onSecondaryContainerLight,
+    "secondaryFixedLight" : $secondaryFixedLight,
+    "onSecondaryFixedLight" : $onSecondaryFixedLight,
+    "secondaryFixedDimLight" : $secondaryFixedDimLight,
+    "onSecondaryFixedVariantLight" : $onSecondaryFixedVariantLight,
+    // //tertiary
+    "tertiaryLight" : $tertiaryLight,
+    "onTertiaryLight" : $onTertiaryLight,
+    "tertiaryContainerLight" : $tertiaryContainerLight,
+    "onTertiaryContainerLight" : $onTertiaryContainerLight,
+    "tertiaryFixedLight":$tertiaryFixedLight,
+    "onTertiaryFixedLight":$onTertiaryFixedLight ,
+    "tertiaryFixedDimLight":$tertiaryFixedDimLight,
+    // "onTertiaryFixedVariantLight":$onTertiaryFixedVariantLight,
+    // // error
+    "errorLight":$errorLight,
+    "onErrorLight":$onErrorLight,
+    "errorContainerLight":$errorContainerLight,
+    "onErrorContainerLight": $onErrorContainerLight,
+    "outlineLight":$outlineLight,
+    // //background
+    "backgroundLight" : $backgroundLight,
+    "onBackgroundLight" : $onBackgroundLight,
+    // // surface
+    "surfaceLight" : $surfaceLight,
+    "onSurfaceLight":$onSurfaceLight,
+    "surfaceVariantLight":$surfaceVariantLight,
+    "onSurfaceVariantLight":$onSurfaceVariantLight,
+    "inverseSurfaceLight":$inverseSurfaceLight,
+    "inverseOnSurfaceLight":$inverseOnSurfaceLight,
+    "inversePrimaryLight":$inversePrimaryLight,
+    "shadowLight":$shadowLight,
+    // $surfaceTintLight : #6750A4,
+    // $outlineVariantLight : #CAC4CF,
+    // $scrimLight : #000000,
+    // $surfaceContainerHighestLight : #E6E1E6,
+    "surfaceContainerHighestLight":$surfaceContainerHighestLight,
+    // $surfaceContainerHighLight : #ECE7EB,
+    "surfaceContainerHighLight": $surfaceContainerHighLight,
+    // $surfaceContainerLight : #F2ECF1,
+    "surfaceContainerLight" : $surfaceContainerLight,
+    // $surfaceContainerLowLight : #F7F2F7,
+    // $surfaceContainerLowestLight : #FFFFFF,
+    // $surfaceBrightLight : #FDF8FD,
+    // $surfaceDimLight : #DDD8DD,
+
+    //Dark theme mapped
+
+    //     $primaryDark : #6edd86;
+    // $onPrimaryDark : #003915;
+    // $primaryContainerDark : #005322;
+    // $onPrimaryContainerDark : #8afa9f;
+    // $primaryFixedDark : #8afa9f;
+    // $onPrimaryFixedDark : #002109;
+    // $primaryFixedDimDark : #6edd86;
+    // $onPrimaryFixedVariantDark : #005322;
+    // $secondaryDark : #b8ccb6;
+    // $onSecondaryDark : #233425;
+    // $secondaryContainerDark : #394b3a;
+    // $onSecondaryContainerDark : #d3e8d1;
+    // $secondaryFixedDark : #d3e8d1;
+    // $onSecondaryFixedDark : #0f1f11;
+    // $secondaryFixedDimDark : #b8ccb6;
+    // $onSecondaryFixedVariantDark : #394b3a;
+    // $tertiaryDark : #a1ced7;
+    // $onTertiaryDark : #00363e;
+    // $tertiaryContainerDark : #1f4d55;
+    // $onTertiaryContainerDark : #bdeaf4;
+    // $tertiaryFixedDark : #bdeaf4;
+    // $onTertiaryFixedDark : #001f24;
+    // $tertiaryFixedDimDark : #a1ced7;
+    // $onTertiaryFixedVariantDark : #1f4d55;
+    // $errorDark : #ffb4ab;
+    // $errorContainerDark : #93000a;
+    // $onErrorDark : #690005;
+    // $onErrorContainerDark : #ffdad6;
+    // $backgroundDark : #1a1c19;
+    "backgroundDark" : $backgroundDark,
+    "onBackgroundDark":$onBackgroundDark,
+    // $outlineDark : #8b9389;
+    // $inverseOnSurfaceDark : #1a1c19;
+    // $inverseSurfaceDark : #e2e3dd;
+    // $inversePrimaryDark : #006d2f;
+    // $shadowDark : #000000;
+    // $surfaceTintDark : #6edd86;
+    // $outlineVariantDark : #414941;
+    // $scrimDark : #000000;
+    // $surfaceDark : #111411;
+    // $onSurfaceDark : #c5c7c2;
+    "onSurfaceDark" : $onSurfaceDark,
+    //$surfaceVariantDark : #414941;
+    // $onSurfaceVariantDark : #c1c9be;
+    // $surfaceContainerHighestDark : #333532;
+    // $surfaceContainerHighDark : #282b27;
+    "surfaceContainerDark" : $surfaceContainerDark,
+    // $surfaceContainerLowDark : #1a1c19;
+    // $surfaceContainerLowestDark : #0c0f0c;
+    // $surfaceDimDark : #111411;
+    // $surfaceBrightDark : #373a36;
+
+);
+
+
+
+//combine the light scheme into the og map "theme colors" you could should then be able to access the custom theme colors within your html like you were able to do with the og map "theme colors"
+$theme-colors: map-merge($custom-theme-colors-light, $theme-colors);
+
+
+
+
+
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+@import "bootstrap/scss/mixins";
+
+// //layout
+@import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
+
+
+// //non-layout
+@import "../../node_modules/bootstrap/scss/carousel";
+@import "../../node_modules/bootstrap/scss/navbar";
+@import "../../node_modules/bootstrap/scss/utilities";
+
+@import "../../node_modules/bootstrap/scss/nav";
+@import "../../node_modules/bootstrap/scss/buttons";
+
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+
+
+
+
+
+//side sliding sidebar
+
+@import "./side_drawer";

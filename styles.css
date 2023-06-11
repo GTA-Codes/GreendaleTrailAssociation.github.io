@@ -1,0 +1,24 @@
+/* body {
+    background-color: var(--backgroundLight);
+    color:var(--onBackgroundLight);
+}
+
+nav.navbar{
+    background-color:var(--surfaceLight);
+    color: var(--onSurfaceLight);
+}
+
+footer{
+    background-color:var(--surfaceLight);
+    color: var(--onSurfaceLight);
+}
+
+a{
+    color: var(--onBackgroundLight)
+}
+
+#sign-up-card{
+    background-color: var(--surfaceContainerLight);
+    box-shadow: 0 1rem 3rem rgba(var(--primaryLight),.175);
+
+} */
