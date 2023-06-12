@@ -1,16 +1,25 @@
 body {
+    /* display: grid; */
     padding: .8em;
-    background-color: var(--backgroundLight);
-    color: var(--onBackgroundLight);
     font-family: 'Roboto';
+    min-height: 100vh;
+    
+    color: var(--onBackgroundLight);
+    
+    background-color: var(--backgroundLight);
 }
+
 body nav {
+    position: absolute;
+    top: 0px;
     display: flex;
+    padding-top: .8em;
+    padding-bottom: 8em;
 
     background-color: var(--surfaceLight);
 }
 
-body .hero-card{
+body .hero-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,11 +27,11 @@ body .hero-card{
     height: 60vh;
     z-index: 2;
     border-radius: 1em;
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
     /* background-color: red; */
 }
 
-body .hero-card button{
+body .hero-card button {
     border-radius: .5rem;
     padding: .5rem 1rem;
 
@@ -34,5 +43,84 @@ body .hero-card button{
 
 body .hero-card button a {
     color: var(--onPrimaryLight);
-text-decoration: none;
+    text-decoration: none;
+}
+
+
+/* bubble stuff */
+
+/* section styling */
+body div.bubble-section {
+    overflow: hidden;
+    height: 60vh;
+    display: grid;
+    position: relative;
+    min-height: 12rem;
+
+    background-color: var(--surfaceLight);
+
+    border-radius: 1em;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+}
+
+/* individual bubble styling */
+body div.bubble-section .bubble {
+    background-color: var(--primaryLight);
+    transform: translate(0 var(--distance/2));
+    position: absolute;
+    left: var(--position);
+    border-radius: 100%;
+    animation:
+        bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s),
+        bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    transform: translate(-50%, 100%);
+    /* filter: blur(5std) */
+}
+/* bubble chart title */
+body div.bubble-section .chart-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .8em;
+}
+/* bubbles bottom level */
+body div.bubble-section .base{
+    /* position: relative; */
+    position: absolute;
+    bottom: 0px;
+
+    height: 15%;
+    width: 100%;
+
+    background-color: var(--primaryLight);
+
+}
+
+body div.bubble-section .bubble-wrapper{
+position: relative;
+}
+
+@keyframes bubble-size {
+
+
+    75% {
+        width: var(--size, 4rem);
+        height: var(--size, 4rem);
+    }
+
+    100% {
+        width: 0rem;
+        height: 0rem;
+    }
+}
+
+@keyframes bubble-move {
+    0% {
+        /* bottom: -4rem; */
+        bottom: 20%;
+    }
+
+    100% {
+        bottom: var(--distance);
+    }
 }
