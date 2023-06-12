@@ -65,6 +65,7 @@ body div.bubble-section {
 
 /* individual bubble styling */
 body div.bubble-section .bubble {
+    /* filter: url(#goo); */
     background-color: var(--primaryLight);
     transform: translate(0 var(--distance/2));
     position: absolute;
@@ -85,11 +86,10 @@ body div.bubble-section .chart-title{
 }
 /* bubbles bottom level */
 body div.bubble-section .base{
-    /* position: relative; */
     position: absolute;
     bottom: 0px;
 
-    height: 15%;
+    height: 10%;
     width: 100%;
 
     background-color: var(--primaryLight);
@@ -98,6 +98,7 @@ body div.bubble-section .base{
 
 body div.bubble-section .bubble-wrapper{
 position: relative;
+filter: url("#goo");
 }
 
 @keyframes bubble-size {
@@ -124,3 +125,5 @@ position: relative;
         bottom: var(--distance);
     }
 }
+
+
