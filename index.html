@@ -6,46 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="./colors.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect " href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Greendale Trail Association</title>
 </head>
 
 <body>
     <nav>
-        <div>
-            Greendale Trail Association
-        </div>
+        <h1>
+            <a href="#">
+                Greendale Trail Association
+            </a>
+        </h1>
         <div class="nav-section">
+            <a href="./about.html">About-Us</a>
+            <a href="./race-map.html">Race-Map</a>
         </div>
     </nav>
+    <div class="grid">
+        <img src="./images/trail-d.jpg" style="width: 100%;">
+        <p >
 
+            The Greendale Trail Association is an organization that helps fund a new Greenbelt Trail System. The
+            Greenbelt Trail System is developed in order to enhance pedestrian and cyclist safety across the
+            Village, improve connectivity to existing pedestrian and bike infrastructure both within and outside the
+            Village, attract cyclists to visit Downtown Greendale businesses, and provide expanded opportunities for
+            diverse transportation options. The Trail would connect Greendale points of interest to the regional Oak
+            Leaf Trail, a popular multi-use trail system across Milwaukee County.
+        </p>
+    </div>
+    <!-- <div class="banner-section">
+        <img class="banner-image" src="./images/trail-d.jpg">
+        <p class="banner-image-overlay">
+            The Greendale Trail Association is an organization that helps fund a new Greenbelt Trail System. The
+            Greenbelt Trail System is developed in order to enhance pedestrian and cyclist safety across the
+            Village, improve connectivity to existing pedestrian and bike infrastructure both within and outside the
+            Village, attract cyclists to visit Downtown Greendale businesses, and provide expanded opportunities for
+            diverse transportation options. The Trail would connect Greendale points of interest to the regional Oak
+            Leaf Trail, a popular multi-use trail system across Milwaukee County.</p>
+    </div> -->
     <h1 class="hero-card">
-        Sign up for our next run!
+        <div class="card-text">
+            Sign up for August 26th 5k and 2 Mile Walk
+
+        </div>
         <button>
             <a target="_blank" href="https://runsignup.com/runforthetrail">
                 Sign up
             </a>
         </button>
     </h1>
-    <div class="bubble-section">
-        <div class="chart-title">Money Raised : $900</div>
-        <div class="bubble-wrapper"></div>
-        
-        <div class="base">
-            <!-- wrapper -->
-        </div>
-    </div>
+
     <svg style="position: fixed; top:100vh">
         <defs>
             <filter id="goo">
                 <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                    result="goo" />
                 <feBlend in="SourceGraphic" in2="goo" />
             </filter>
         </defs>
     </svg>
+
 
 
 

@@ -1,25 +1,108 @@
+/* global styling */
+a {
+    text-decoration: none;
+}
+a:visited, a {
+    color: var(--onBackgroundLight)
+}
+
+/* component styles */
+.card{
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    border-radius: 1em;
+    box-shadow: 0 1rem 3rem black;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1em;
+    padding: 4rem 2rem;
+    align-items: center;
+}
+
+
+.card-text {
+    padding: 1em;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 body {
-    /* display: grid; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
     padding: .8em;
     font-family: 'Roboto';
     min-height: 100vh;
-    
     color: var(--onBackgroundLight);
-    
+
     background-color: var(--backgroundLight);
 }
 
 body nav {
-    position: absolute;
-    top: 0px;
     display: flex;
-    padding-top: .8em;
-    padding-bottom: 8em;
+    justify-content: space-between;
+    align-items: center;
 
     background-color: var(--surfaceLight);
 }
 
+.nav-section > a {
+    padding-left: 1em;
+}
+
+
+
+
+/* banner section */
+
+
+.banner-section {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+}
+
+.banner-image-overlay {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    backdrop-filter: blur(6px);
+    z-index: 10;
+
+    text-align: center;
+    color: var(--onBackgroundDark);
+}
+
+
+
+
+/* hero section */
+
 body .hero-card {
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,8 +110,7 @@ body .hero-card {
     height: 60vh;
     z-index: 2;
     border-radius: 1em;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
-    /* background-color: red; */
+    box-shadow: 0 1rem 3rem black;
 }
 
 body .hero-card button {
@@ -45,6 +127,33 @@ body .hero-card button a {
     color: var(--onPrimaryLight);
     text-decoration: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* bubble stuff */
@@ -75,20 +184,20 @@ body div.bubble-section .bubble {
         bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s),
         bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
     transform: translate(-50%, 100%);
-    /* filter: blur(5std) */
 }
+
 /* bubble chart title */
-body div.bubble-section .chart-title{
+body div.bubble-section .chart-title {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: .8em;
 }
+
 /* bubbles bottom level */
-body div.bubble-section .base{
+body div.bubble-section .base {
     position: absolute;
     bottom: 0px;
-
     height: 10%;
     width: 100%;
 
@@ -96,9 +205,9 @@ body div.bubble-section .base{
 
 }
 
-body div.bubble-section .bubble-wrapper{
-position: relative;
-filter: url("#goo");
+body div.bubble-section .bubble-wrapper {
+    position: relative;
+    filter: url("#goo");
 }
 
 @keyframes bubble-size {
@@ -125,5 +234,3 @@ filter: url("#goo");
         bottom: var(--distance);
     }
 }
-
-

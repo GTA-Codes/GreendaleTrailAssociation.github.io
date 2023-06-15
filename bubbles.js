@@ -1,7 +1,7 @@
 
 //create divs:
 let count = 0;
-for(count; count < 128; count++){
+for(count; count < 200; count++){
     // console.log(count)
 
     let wrapper = document.querySelector('.bubble-wrapper');
