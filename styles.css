@@ -1,0 +1,83 @@
+/* global styling */
+a {
+    text-decoration: none;
+}
+
+a:visited,
+a {
+    color: var(--onBackgroundLight)
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: .8em;
+    font-family: 'Roboto';
+    min-height: 100vh;
+    color: var(--onBackgroundLight);
+    background-color: var(--backgroundLight);
+}
+
+body nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--surfaceLight);
+}
+
+.nav-section>a {
+    padding-left: 1em;
+}
+
+.nav--curr {
+    text-decoration: underline;
+    text-decoration-color: var(--onSurfaceLight);
+}
+
+/* || card */
+.card {
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    border-radius: 1em;
+    box-shadow: 0 1rem 3rem black;
+}
+
+
+
+.card__text {
+    padding: 1em;
+
+}
+
+
+/* || buttons */
+
+.btn {
+    width: max-content;
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: var(--primaryLight);
+
+}
+
+/* .menu{
+    display: none;
+} */
+
+/* || mobile */
+/* @media only screen and (max-width:680px) { */
+    /* show = hamburger menu if the screen is smaller than 680 px*/
+    /* .menu{
+        display: block;
+
+    } */
+    /* hide the nav links */
+    /* when the menu is clicked, show the nav links */
+/* } */
