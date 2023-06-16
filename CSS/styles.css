@@ -1,4 +1,19 @@
-/* global styling */
+/* 
+
+Section Headers:
+
+|| global styling
+|| card
+|| buttons
+|| mobile
+|| drawer
+|| menu
+
+*/
+
+
+
+/* || global styling */
 a {
     text-decoration: none;
 }
@@ -35,6 +50,7 @@ body nav {
     text-decoration-color: var(--onSurfaceLight);
 }
 
+
 /* || card */
 .card {
     text-align: center;
@@ -67,17 +83,106 @@ body nav {
 
 }
 
-.menu{
+
+
+/* || mobile */
+
+/* styles shown only if mobile */
+.menu,
+.drawer {
     display: none;
 }
 
-/* || mobile */
 @media only screen and (max-width:680px) {
-    /* show = hamburger menu if the screen is smaller than 680 px*/
-    .menu{
-        display: block;
+    :root {
+        --bar-width: 30px;
+        --barHeight: 4px;
+        --barGap: 6px;
+        --animation-timing: 200ms ease-in-out;
+        --hamburger-height: calc(var(--bar-height) * 3 + var(--barGap) * 2);
+    }
+
+    *,
+    *::after,
+    *::before {
+        box-sizing: border-box;
+    }
+
+    /* hide part of the menu && desktop styling*/
+    .menu__input,
+    .nav-section a {
+        display: none;
+    }
+
+    .menu {
+        background-color: var(--backgroundLight);
+        display: flex;
+        flex-direction: column;
+        gap: var(--barGap);
+        width: max-content;
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
 
     }
-    /* hide the nav links */
-    /* when the menu is clicked, show the nav links */
+
+    /* || drawer */
+    .drawer {
+        position: absolute;
+        /* z index is only specified to show above the trail map page's image */
+        z-index: 1;
+        top: 0px;
+        right: 0px;
+        height: 100%;
+        width: 30vw;
+
+        background-color: var(--backgroundLight);
+    }
+
+    .drawer__list {
+        display: flex;
+        flex-direction: column;
+        margin-top: 5rem; 
+    }
+
+    .drawer__list__item {
+        padding: .8em;
+    }
+    .drawer__list__item:hover{
+        border: 1px solid;
+    }
+
+    .drawer__list__item a {
+        display: block ;
+    }
+
+    /* box checked show the drawer */
+
+    .menu:has(input:checked)+.drawer {
+        display: block;
+    }
+
+    /* || menu */
+
+    .menu::before,
+    .menu::after {
+        background-color: var(--onBackgroundLight);
+        content: "";
+        width: var(--bar-width);
+        height: var(--barHeight);
+        border-radius: 9000px;
+    }
+
+
+    /* box checked move the menu's = */
+
+    .menu:has(input:checked)::before {
+        /* translate then rotate */
+        transform: translateY(calc(var(--barGap) / 2 + var(--barHeight) / 2)) rotate(45deg);
+    }
+
+    .menu:has(input:checked)::after {
+        /* translate then rotate */
+        transform: translateY(calc(var(--barGap) / -2 + var(--barHeight) / -2)) rotate(-45deg);
+    }
 }
