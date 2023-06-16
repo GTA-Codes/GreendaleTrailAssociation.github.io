@@ -30,6 +30,11 @@ body nav {
     padding-left: 1em;
 }
 
+.nav--curr {
+    text-decoration: underline;
+    text-decoration-color: var(--onSurfaceLight);
+}
+
 /* || card */
 .card {
     text-align: center;
@@ -60,4 +65,19 @@ body nav {
     border-radius: 10px;
     background-color: var(--primaryLight);
 
+}
+
+.menu{
+    display: none;
+}
+
+/* || mobile */
+@media only screen and (max-width:680px) {
+    /* show = hamburger menu if the screen is smaller than 680 px*/
+    .menu{
+        display: block;
+
+    }
+    /* hide the nav links */
+    /* when the menu is clicked, show the nav links */
 }
