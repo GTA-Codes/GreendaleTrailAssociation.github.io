@@ -1,8 +1,16 @@
+@media only screen and (max-width: 400) {
+    .donate-header{
+        display: none;
+    }
+}
+
+
 /* 
 
 Section Headers:
 
 || global styling
+|| sections
 || card
 || buttons
 || mobile
@@ -33,7 +41,7 @@ body {
     background-color: var(--backgroundLight);
 }
 
-body nav {
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,6 +49,9 @@ body nav {
     background-color: var(--surfaceLight);
 }
 
+/* || sections */
+
+/* || nav-section */
 .nav-section>a {
     padding-left: 1em;
 }
@@ -50,9 +61,50 @@ body nav {
     text-decoration-color: var(--onSurfaceLight);
 }
 
+/* || team-section */
+.team-grid {
+    display: grid;
+    gap: 2em;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 45%));
+}
+
+.team-card-overlay {
+    /* 
+    applies linear gradient over background img defined in html file.
+    shows team member name and their role
+    */
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    color: white;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+    /* match the border radius of the card */
+    border-radius: 1em;
+    height: 100%;
+    width: 100%;
+
+}
+
+/* || donate-section */
+
+.btn-pair {
+    /* background-color: red; */
+
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+@media only screen and (max-width: 380px) {
+    .btn-pair{
+        flex-direction: column;
+    }
+}
 
 /* || card */
 .card {
+    height: 30vh;
+    /* width: 30vw; */
     text-align: center;
     flex-direction: column;
     justify-content: center;
@@ -121,7 +173,7 @@ body nav {
         gap: var(--barGap);
         width: max-content;
         position: relative;
-        z-index: 2;
+        z-index: 9999;
         cursor: pointer;
 
     }
@@ -129,8 +181,8 @@ body nav {
     /* || drawer */
     .drawer {
         position: absolute;
-        /* z index is only specified to show above the trail map page's image */
-        z-index: 1;
+        /* z index is specified to show above the trail map page's image and cards on the about page*/
+        z-index: 4;
         top: 0px;
         right: 0px;
         height: 100%;
@@ -142,18 +194,19 @@ body nav {
     .drawer__list {
         display: flex;
         flex-direction: column;
-        margin-top: 5rem; 
+        margin-top: 5rem;
     }
 
     .drawer__list__item {
         padding: .8em;
     }
-    .drawer__list__item:hover{
+
+    .drawer__list__item:hover {
         border: 1px solid;
     }
 
     .drawer__list__item a {
-        display: block ;
+        display: block;
     }
 
     /* box checked show the drawer */
