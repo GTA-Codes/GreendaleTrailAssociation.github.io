@@ -1,20 +1,24 @@
+@media only screen and (max-width: 400) {
+    .donate-header{
+        display: none;
+    }
+}
+
+
 /* 
+
 Section Headers:
 
 || global styling
 || sections
 || card
 || buttons
-
-
-
 || mobile
-|| donate-section
-|| menu
 || drawer
 || menu
 
 */
+
 
 
 /* || global styling */
@@ -29,9 +33,8 @@ a {
 
 body {
     display: flex;
-    position: relative;
     flex-direction: column;
-    margin: 0;
+    padding: .8em;
     font-family: 'Roboto';
     min-height: 100vh;
     color: var(--onBackgroundLight);
@@ -42,7 +45,6 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .8em;
 
     background-color: var(--surfaceLight);
 }
@@ -85,31 +87,16 @@ nav {
 }
 
 /* || donate-section */
-.donate-header {
-    /* border: 3px solid red; */
-    min-height: 40vh;
-    max-height: 60vh;
-    height: 50vh;
-    width: 100vw;
-    overflow: hidden;
-}
-
-.donate-section__cta{
-display: flex;
-flex-direction: column;
-align-items: center;
-text-align: center;
-padding: .8em;
-}
 
 .btn-pair {
+    /* background-color: red; */
+
     display: flex;
     justify-content: center;
     gap: 1em;
 }
-
 @media only screen and (max-width: 380px) {
-    .btn-pair {
+    .btn-pair{
         flex-direction: column;
     }
 }
@@ -117,6 +104,7 @@ padding: .8em;
 /* || card */
 .card {
     height: 30vh;
+    /* width: 30vw; */
     text-align: center;
     flex-direction: column;
     justify-content: center;
@@ -158,34 +146,6 @@ padding: .8em;
 }
 
 @media only screen and (max-width:680px) {
-
-    /* || mobile-global */
-    *,
-    *::after,
-    *::before {
-        box-sizing: border-box;
-    }
-
-    /* || donate-section */
-
-
-    .donate-header {
-        /* border: 3px black solid; */
-        max-height: 40vh;
-        width: 100vw;
-        overflow: hidden;
-    }
-
-
-    /* || btn */
-    .btn-pair {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-    }
-
-    /* || menu */
     :root {
         --bar-width: 30px;
         --barHeight: 4px;
@@ -194,7 +154,11 @@ padding: .8em;
         --hamburger-height: calc(var(--bar-height) * 3 + var(--barGap) * 2);
     }
 
-
+    *,
+    *::after,
+    *::before {
+        box-sizing: border-box;
+    }
 
     /* hide part of the menu && desktop styling*/
     .menu__input,
