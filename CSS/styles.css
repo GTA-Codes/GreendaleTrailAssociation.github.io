@@ -85,7 +85,9 @@ nav {
     width: 100%;
 
 }
-
+.btn > a{
+    color: var(--onPrimaryLight);
+}
 .btn-pair {
     display: flex;
     justify-content: center;
@@ -155,6 +157,7 @@ nav {
     text-align: center;
     border-radius: 10px;
     background-color: var(--primaryLight);
+    color: var(--onPrimaryLight);
 
 }
 
@@ -191,7 +194,7 @@ nav {
         width: 100vw;
     }
 
-
+   
 
     /* || btn */
     .btn-pair {
@@ -199,6 +202,7 @@ nav {
         display: flex;
         flex-direction: column;
         gap: 1em;
+        color: var(--onPrimaryLight)
     }
 
     /* || menu */
