@@ -1,5 +1,6 @@
 @import url(./typography.css);
 @import url(./containers.css);
+@import url(./global-navbar.css);
 /* 
 Section Headers:
 
@@ -40,14 +41,7 @@ body {
     background-color: var(--backgroundLight);
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: .8em;
 
-    background-color: var(--surfaceLight);
-}
 
 /* || sections */
 
@@ -165,11 +159,7 @@ nav {
 
 /* || mobile */
 
-/* styles shown only if mobile */
-.menu,
-.drawer {
-    display: none;
-}
+
 
 @media only screen and (max-width: 380px) {
     .btn-pair {
@@ -216,82 +206,4 @@ nav {
 
 
 
-    /* hide part of the menu && desktop styling*/
-    .menu__input,
-    .nav-section a {
-        display: none;
-    }
-
-    .menu {
-        background-color: var(--backgroundLight);
-        display: flex;
-        flex-direction: column;
-        gap: var(--barGap);
-        width: max-content;
-        position: relative;
-        z-index: 9999;
-        cursor: pointer;
-
-    }
-
-    /* || drawer */
-    .drawer {
-        position: absolute;
-        /* z index is specified to show above the trail map page's image and cards on the about page*/
-        z-index: 4;
-        top: 0px;
-        right: 0px;
-        height: 100%;
-        width: 30vw;
-
-        background-color: var(--backgroundLight);
-    }
-
-    .drawer__list {
-        display: flex;
-        flex-direction: column;
-        margin-top: 5rem;
-    }
-
-    .drawer__list__item {
-        padding: .8em;
-    }
-
-    .drawer__list__item:hover {
-        border: 1px solid;
-    }
-
-    .drawer__list__item a {
-        display: block;
-    }
-
-    /* box checked show the drawer */
-
-    .menu:has(input:checked)+.drawer {
-        display: block;
-    }
-
-    /* || menu */
-
-    .menu::before,
-    .menu::after {
-        background-color: var(--onBackgroundLight);
-        content: "";
-        width: var(--bar-width);
-        height: var(--barHeight);
-        border-radius: 9000px;
-    }
-
-
-    /* box checked move the menu's = */
-
-    .menu:has(input:checked)::before {
-        /* translate then rotate */
-        transform: translateY(calc(var(--barGap) / 2 + var(--barHeight) / 2)) rotate(45deg);
-    }
-
-    .menu:has(input:checked)::after {
-        /* translate then rotate */
-        transform: translateY(calc(var(--barGap) / -2 + var(--barHeight) / -2)) rotate(-45deg);
-    }
 }

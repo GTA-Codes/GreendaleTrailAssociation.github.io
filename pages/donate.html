@@ -13,9 +13,28 @@
     <title>Greendale Trail Association</title>
 </head>
 
-<body>
+<body> 
+    <!-- 
+        All of my pages require a global navbar.. It's tedious having to maintain the navbar as the number of containing links increase. Whats a more maintainable solution?
 
-    <nav>
+        Learn to use a static site generator. The limitation to this would be...
+
+        1. no real time content updates: the developer needs to uplad the local files. Imagine updating a content or live data feed... It's possible but not its intended use.
+
+        
+        My current questions:
+
+        1. At what point will it become significantly more difficult to manage: the build process, handling large content volumes, ensuring efficient deployment across multiple servers 
+
+        2. If I choose to use a static site generator, will I be able to adopt a hybrid approach
+
+
+
+
+
+
+     -->
+    <nav class="global-navbar">
         <h1>
             <a href="../index.html">
                 Greendale Trail Association
@@ -55,7 +74,7 @@
     background-size: cover;
     background-position: 50% 50%;
     ">
-        
+
         <div style="
         text-align: center;
         width: max-content;
@@ -67,10 +86,11 @@
         
         
         
-        "> <h1>
-            Help us help you
+        ">
+            <h1>
+                Help us help you
 
-        </h1>
+            </h1>
         </div>
 
     </div>
@@ -108,7 +128,9 @@
     <div>
 
     </div>
-
+    <script>
+    // if you include a modular js file here, could it access what the "current page is from looking at this page's meta data?"
+    </script>
 </body>
 
 </html>
