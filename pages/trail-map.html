@@ -14,6 +14,19 @@
 </head>
 
 <body>
+    <style>
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .col {
+            display: flex;
+            flex-direction: column;
+            row-gap: 2em;
+        }
+    </style>
     <nav class="global-navbar">
         <h1>
             <a href="../index.html">
@@ -43,29 +56,51 @@
         </div>
     </nav>
     <h3 style="padding-inline: .8em;">Tentative new Greenbelt Trail</h3>
-    <!-- <div class="key" style="
+    <div class="key" style="
     display:flex;
     flex-direction: column;
     align-items: center;
     ">
-        <div style="
-        background-image: url(../images/trail-page/shared.svg);
-        background-size: contain;
+        <div class="col">
+            <div class="row">
+                <p>New Trail</p>
+                <div style="
+        background-image: url(../images/trail-page/new-trail.svg);
+        background-size: cover;
         background-repeat: no-repeat;
-        height: 300px;
-        width: 30%;
+        height: 10vh;
+        width: 33vw;
+        background-position: 50% 50%;
         "></div>
-        <p>Shared Bike Lane</p>
-        <img src="../images/trail-page/new.svg" style="height: 30vh;">
-        <p>New Trail</p>
-        <img src="../images/trail-page/widening.svg" style="height: 30vh;">
-        <p>Widening of Sidewalk</p>
-
-    </div> -->
-    <img src="../images/trail-page/TrailMap.jpg" style="rotate:180deg;width: 100%; "
+            </div>
+            <div class="row">
+                <p>Shared Bike Lane</p>
+                <div style="
+        background-image: url(../images/trail-page/shared.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 10vh;
+        width: 33vw;
+        background-position: 50% 50%;
+        "></div>
+            </div>
+            <div class="row">
+                <p>Widening of Sidewalk</p>
+                <div style="
+    background-image: url(../images/trail-page/widening.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 10vh;
+    width: 33vw;
+    background-position: 50% 50%;
+    "></div>
+                <div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="../images/trail-page/TrailMap.jpg" style="rotate:180deg;width: 100%; margin-top: 10vh;"
         alt="Greendale Trail Association Race Map" />
-    <!-- <img src="../images/trail-page/2.jpg" style="rotate:180deg;width: 100%; " alt="Greendale Trail Association Race Map" /> -->
-
 </body>
 
 </html>
