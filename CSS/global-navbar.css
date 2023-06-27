@@ -6,63 +6,108 @@ on right && phone size or smaller, menu btn
 
 
 .global-navbar {
+    z-index: 99;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: .8em;
-    
+    position: fixed;
+    left: 0px;
+    right: 0px;
+
     background-color: var(--surfaceLight);
+    
 }
 
-.menu, .drawer {
+/* hide menu icon on desktop */
+.menu,
+.drawer__list, 
+.scrim {
     display: none;
 }
 
+
 @media only screen and (max-width:680px) {
+    :root{
+        --scrim-z: 9;
+    }
+
     /* define some vars for later use */
     .nav-section {
+        --bar-width: 30px;
+        --barHeight: 4px;
+        --barGap: 6px;
+        --animation-timing: 200ms ease-in-out;
+        --hamburger-height: calc(var(--bar-height) * 3 + var(--barGap) * 2);
         --barColor: var(--onBackgroundLight);
+
+        --menu-animation-speed: 250ms;
     }
+
     /* hide desktop styling: nav section's links*/
+    /* drawer hidden by default */
+    .scrim__input,
     .menu__input,
     .nav-section a {
         display: none;
     }
-    /* drawer hidden by default */
-    .drawer{
-        display: none;
-    }
 
+    .scrim{
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        z-index: var(--scrim-z);
+        background-color: var(--scrimLight);
+        opacity: .7;
+        height: 100%;
+        width: 100vw;
+    }
+    /* when the scrim is checked, toggle the drawer */
+  
+
+    /* menu button */
     .menu {
-        background-color: var(--backgroundLight);
+        /* background-color: var(--backgroundLight); */
         display: flex;
         flex-direction: column;
         gap: var(--barGap);
         width: max-content;
-        position: relative;
+        position: fixed;
+        top: 2.5rem;
+        right: 1rem;
         z-index: 9999;
         cursor: pointer;
 
     }
 
     /* || drawer */
-    .drawer {
-        position: absolute;
+    .drawer__list {
+        position: fixed;
         /* z index is specified to show above the trail map page's image and cards on the about page*/
-        z-index: 4;
+        z-index: 40;
+        left: 100%;
+        height: 100vh;
         top: 0px;
-        right: 0px;
-        height: 100%;
+        padding-top: 5rem;
         width: 30vw;
 
-        background-color: var(--backgroundLight);
-    }
-
-    .drawer__list {
         display: flex;
         flex-direction: column;
-        margin-top: 5rem;
+        background-color: var(--backgroundLight);
+        transition: transform var(--menu-animation-speed) linear;
+
+
     }
+
+    /* box checked show the drawer */
+    .menu:has(input:checked) ~ .drawer__list {
+        transform: translateX(-30vw);
+        transition: transform var(--menu-animation-speed) linear;
+    }
+
+.menu.menu:has(input:checked) ~ .scrim {
+    display: block;
+}
 
     .drawer__list__item {
         padding: .8em;
@@ -76,13 +121,6 @@ on right && phone size or smaller, menu btn
         display: block;
     }
 
-    /* box checked show the drawer */
-
-    .menu:has(input:checked)+.drawer {
-        display: block;
-    }
-
-    /* || menu */
     /* menu before - > top bar, after is the bottom bar */
     .menu::before,
     .menu::after {
@@ -91,20 +129,21 @@ on right && phone size or smaller, menu btn
         width: var(--bar-width);
         height: var(--barHeight);
         border-radius: 9000px;
+        transition: transform var(--menu-animation-speed) linear;
+
     }
 
-
     /* box checked move the menu's = */
-
     .menu:has(input:checked)::before {
         /* translate then rotate */
         transform: translateY(calc(var(--barGap) / 2 + var(--barHeight) / 2)) rotate(45deg);
+        transition: transform var(--menu-animation-speed) linear;
+
     }
 
     .menu:has(input:checked)::after {
         /* translate then rotate */
         transform: translateY(calc(var(--barGap) / -2 + var(--barHeight) / -2)) rotate(-45deg);
+        transition: transform var(--menu-animation-speed) linear;
     }
 }
-
-@keyframes openDrawerAnimation {}

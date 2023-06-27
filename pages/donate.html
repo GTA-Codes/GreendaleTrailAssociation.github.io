@@ -13,7 +13,7 @@
     <title>Greendale Trail Association</title>
 </head>
 
-<body> 
+<body>
     <!-- 
         All of my pages require a global navbar.. It's tedious having to maintain the navbar as the number of containing links increase. Whats a more maintainable solution?
 
@@ -47,17 +47,16 @@
             <label class="menu">
                 <input class="menu__input" type="checkbox">
             </label>
-            <div class="drawer">
-                <div class="drawer__list">
-                    <div class="nav--curr drawer__list__item">
-                        <a href="./donate.html">Donate</a>
-                    </div>
-                    <div class="drawer__list__item">
-                        <a href="./meet-the-team.html">Meet the Team</a>
-                    </div>
-                    <div class="drawer__list__item">
-                        <a href="./trail-map.html">Trail Map</a>
-                    </div>
+            <div class="scrim"></div>
+            <div class="drawer__list">
+                <div class="nav--curr drawer__list__item">
+                    <a href="./donate.html">Donate</a>
+                </div>
+                <div class="drawer__list__item">
+                    <a href="./meet-the-team.html">Meet the Team</a>
+                </div>
+                <div class="drawer__list__item">
+                    <a href="./trail-map.html">Trail Map</a>
                 </div>
             </div>
         </div>
@@ -128,8 +127,8 @@
     <div>
 
     </div>
-    <script>
-    // if you include a modular js file here, could it access what the "current page is from looking at this page's meta data?"
+     <script src="../scripts/scrim-toggle.js">
+        
     </script>
 </body>
 
