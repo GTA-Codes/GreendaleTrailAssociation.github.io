@@ -1,0 +1,31 @@
+#global-footer{
+    margin-top: 2rem;
+    height: 10vh;
+    border-top: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.social-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+}
+.social-link{
+    display: flex;
+    justify-content: center;
+}
+.icn{
+    /* width: clamp(200px,  400px -5vw , 120px); */
+    width: 120px;
+    /* background-color: red; */
+    display: flex;
+
+}
+.contact-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 1rem 1rem 1rem;
+    text-align: center;
+}

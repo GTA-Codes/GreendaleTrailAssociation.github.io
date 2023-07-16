@@ -10,30 +10,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect " href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- global component styles -->
+    <link rel="stylesheet" href="../global-components/footer/styles.css">
     <title>Greendale Trail Association</title>
 </head>
 
 <body>
-    <!-- 
-        All of my pages require a global navbar.. It's tedious having to maintain the navbar as the number of containing links increase. Whats a more maintainable solution?
-
-        Learn to use a static site generator. The limitation to this would be...
-
-        1. no real time content updates: the developer needs to uplad the local files. Imagine updating a content or live data feed... It's possible but not its intended use.
-
-        
-        My current questions:
-
-        1. At what point will it become significantly more difficult to manage: the build process, handling large content volumes, ensuring efficient deployment across multiple servers 
-
-        2. If I choose to use a static site generator, will I be able to adopt a hybrid approach
-
-
-
-
-
-
-     -->
     <nav class="global-navbar">
         <h1>
             <a href="../index.html">
@@ -61,6 +43,7 @@
             </div>
         </div>
     </nav>
+
     <div style="
 
 margin-top: 3.5rem;
@@ -95,8 +78,6 @@ margin-top: 3.5rem;
 
     </div>
 
-    </div>
-
     <div class="donate-section">
         <div class="donate-section__cta">
 
@@ -124,12 +105,13 @@ margin-top: 3.5rem;
 
     </div>
 
-    </div>
-    <div>
+    <div id="global-footer"></div>
 
-    </div>
-     <script src="../scripts/scrim-toggle.js">
-        
+    <!-- global HTML gen scripts -->
+    <script src="../global-components/footer/gen-footer.js"></script>
+    <!-- local scripts -->
+    <script src="../scripts/scrim-toggle.js">
+
     </script>
 </body>
 
