@@ -42,24 +42,21 @@ function genSocialSection(){
  socialLink.classList.add('social-link')
  // add the desired href to the div
  let link = document.createElement("a");
+ link.classList.add('fb-link')
  link.target = "_blank";
  link.href = "https://www.facebook.com/profile.php?id=100094460332928";
- socialLink.appendChild(link);
+//  socialLink.appendChild(link);
 
- 
- let icon = document.createElement('object');
- icon.classList.add('icn');
- icon.data = "../global-components/footer/FindUs-FB-RGB.svg";
- // append icon to the link
- link.appendChild(icon);
+//  append link to the div
  socialLink.appendChild(link)
+//  append div to the section
  socialSection.appendChild(socialLink);
 
  footerSection.appendChild(generatedFooter)
 }
 
 function genContactSection(){
-    let footerSection = document.querySelector('#global-footer')
+    let footerSection = document.querySelector('#global-footer');
     let contactSection = document.createElement('div');
     contactSection.classList.add('contact-section');
 

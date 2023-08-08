@@ -10,22 +10,25 @@
     flex-direction: column;
     justify-content: center;
     padding: 1rem;
+    /* background-color: red; */
 }
 .social-link{
+    height: 100%;
     display: flex;
     justify-content: center;
 }
-.icn{
-    /* width: clamp(200px,  400px -5vw , 120px); */
-    width: 120px;
-    /* background-color: red; */
-    display: flex;
 
-}
 .contact-section{
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 1rem 1rem 1rem 1rem;
     text-align: center;
+}
+.fb-link{
+    width: 120px;
+    height: 60px;
+    background-image: url(./FindUs-FB-RGB.svg);
+    background-repeat: no-repeat;
+    background-position: center;
 }
